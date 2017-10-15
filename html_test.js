@@ -8,7 +8,7 @@ var hitGround = 0;
 function setup() {
 	createCanvas(720, 480);
 	//createSlider/Text
-	gasP = createP("Gase");
+	gasP = createP("th");
 	gasSlider = createSlider(0, 10, 0);
 	//position of the slider/text
 	gasP.position(730, -10);
@@ -42,7 +42,7 @@ function draw() {
 		}
 	}
 
-	if(particles.length < 100){
+	if(particles.length < 400){
 		particles.push(new Particle());
 	}
 
