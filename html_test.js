@@ -31,7 +31,7 @@ function draw() {
 	rect(0, height-40, width, 10);
 
 	//fog
-	fill(0, 255, 0, 10*gasSlider.value());
+	fill(255, 100, 75, 10*gasSlider.value());
 	rect(0, 0, width, height);
 
 	for(var i = 0; i < particles.length; i++){
