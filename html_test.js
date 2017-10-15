@@ -8,7 +8,7 @@ var hitGround = 0;
 function setup() {
 	createCanvas(720, 480);
 	//createSlider/Text
-	gasP = createP("Treibhausgase");
+	gasP = createP("TH-GASE");
 	gasSlider = createSlider(0, 10, 0);
 	//position of the slider/text
 	gasP.position(730, -10);
