@@ -42,7 +42,7 @@ function draw() {
 		}
 	}
 
-	if(particles.length < 200){
+	if(particles.length < 100){
 		particles.push(new Particle());
 	}
 
