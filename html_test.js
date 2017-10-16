@@ -3,6 +3,13 @@ var gasSlider;
 var temperature = 0;
 var particles = [];
 var hitGround = 0;
+var cloudURL = "https://raw.githubusercontent.com/guentherg/hello-world/master/cloud.png";
+var img;
+var cloudX = -150;
+
+function preload(){
+	img = loadImage(cloudURL);
+}
 
 function setup() {
 	createCanvas(720, 480);
@@ -12,10 +19,11 @@ function setup() {
 	//position of the slider/text
 	gasP.position(730, -10);
 	gasSlider.position(730, 20);
-	for(var i = 0; i < 100; i++){
+	for(var i = 0; i < 20; i++){
 		particles.push(new Particle());
 		hitGround++;
 	}
+	imageMode(CENTER);
 }
 
 function draw() {
@@ -28,6 +36,7 @@ function draw() {
 	rect(0, height-30, width, 100);
 	fill(72,144,48);
 	rect(0, height-40, width, 10);
+	image(img, cloudX, 200, 300, 150);
 
 	//fog
 	fill(0, 0, 0, 10*gasSlider.value());
@@ -40,16 +49,18 @@ function draw() {
 			particles.splice(i, 1);
 		}
 	}
+	console.log(particles.length);
+	temperature = Math.round(map(particles.length, 18, 250, 18, 60));
 
 	if(frameCount % 10 == 0){
 		particles.push(new Particle());
-		console.log("p");
+		//console.log("p");
 	}
 
 	fill(0);
 	textSize(14);
-	text(particles.length, 10, 400);
-	if(frameCount % 10 == 0 && map(hitGround, 0, 500, 0, 60) < 60){
-		console.log(map(hitGround, 0, 500, 0, 60));
+	text(temperature, 10, 400);
+	if(cloudX < width-150){
+		cloudX++;
 	}
 }
