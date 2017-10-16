@@ -14,7 +14,7 @@ class Particle{
 	}
 
 	update(){
-		this.x+=random(map(cos(this.y/10), -1, 1, -4, 4));
+		//this.x+=random(map(cos(this.y/10), -1, 1, -4, 4));
 		this.y+=this.speed;
 		if(this.y >= height-40){
 			this.moveUp();

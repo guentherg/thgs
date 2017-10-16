@@ -9,6 +9,8 @@ var cloud;
 var city;
 var cloudX = -150;
 
+var sys;
+
 function preload(){
 	cloud = loadImage(cloudURL);
 	city = loadImage(cityURL);
@@ -19,6 +21,9 @@ function setup() {
 	//createSlider/Text
 	gasP = createP("th");
 	gasSlider = createSlider(0, 10, 0);
+
+	sys = new SmokeSystem();
+
 	//position of the slider/text
 	gasP.position(730, -10);
 	gasSlider.position(730, 20);
@@ -40,10 +45,13 @@ function draw() {
 	fill(72,144,48);
 	rect(0, height-40, width, 10);
 	image(cloud, cloudX, 200, 300, 150);
+	image(city, 200, height-114, 400, 166);
 
 	//fog
 	fill(0, 0, 0, 10*gasSlider.value());
 	rect(0, 0, width, height);
+
+	//sys.update();
 
 	for(var i = 0; i < particles.length; i++){
 		particles[i].update();
@@ -52,17 +60,15 @@ function draw() {
 			particles.splice(i, 1);
 		}
 	}
-	console.log(particles.length);
 	temperature = Math.round(map(particles.length, 18, 250, 18, 60));
 
 	if(frameCount % 10 == 0){
 		particles.push(new Particle());
-		//console.log("p");
 	}
 
 	fill(0);
-	textSize(14);
-	text(temperature, 10, 400);
+	textSize(22);
+	text(temperature, 10, 100);
 	if(cloudX < width-150){
 		cloudX++;
 	}
