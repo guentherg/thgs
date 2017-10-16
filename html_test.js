@@ -51,6 +51,7 @@ function draw() {
 	fill(0, 0, 0, 10*gasSlider.value());
 	rect(0, 0, width, height);
 
+	//smoke
 	sys.update();
 
 	for(var i = 0; i < particles.length; i++){
