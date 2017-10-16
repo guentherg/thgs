@@ -9,7 +9,7 @@ var cloud;
 var city;
 var cloudX = -150;
 
-var sys;
+//var sys;
 
 function preload(){
 	cloud = loadImage(cloudURL);
@@ -22,7 +22,7 @@ function setup() {
 	gasP = createP("th");
 	gasSlider = createSlider(0, 10, 0);
 
-	sys = new SmokeSystem();
+	//sys = new SmokeSystem();
 
 	//position of the slider/text
 	gasP.position(730, -10);
