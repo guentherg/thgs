@@ -10,11 +10,11 @@ class Smoke{
   update(){
     this.x += this.vx;
     this.y += this.vy;
-    this.lifespan -= 1;
+    this.lifespan -= 6;
   }
 
   show(){
     fill(51, this.lifespan);
-    ellipse(this.x, this.y, 2);
+    ellipse(this.x, this.y, 4);
   }
 }
