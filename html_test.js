@@ -4,11 +4,14 @@ var temperature = 0;
 var particles = [];
 var hitGround = 0;
 var cloudURL = "https://raw.githubusercontent.com/guentherg/hello-world/master/cloud.png";
-var img;
+var cityURL = "https://raw.githubusercontent.com/guentherg/hello-world/master/city-clipart-14232.png";
+var cloud;
+var city;
 var cloudX = -150;
 
 function preload(){
-	img = loadImage(cloudURL);
+	cloud = loadImage(cloudURL);
+	city = loadImage(cityURL);
 }
 
 function setup() {
@@ -36,7 +39,7 @@ function draw() {
 	rect(0, height-30, width, 100);
 	fill(72,144,48);
 	rect(0, height-40, width, 10);
-	image(img, cloudX, 200, 300, 150);
+	image(cloud, cloudX, 200, 300, 150);
 
 	//fog
 	fill(0, 0, 0, 10*gasSlider.value());
