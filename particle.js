@@ -3,7 +3,7 @@ class Particle{
 		this.x = random(width);
 		this.y = 0;
 		this.c = color(115, 105, 255);
-		this.speed = random(4,5);
+		this.speed = random(3,5);
 		this.state = "down";
 	}
 
