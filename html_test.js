@@ -9,7 +9,7 @@ var cloud;
 var city;
 var cloudX = -150;
 
-//var sys;
+var sys;
 
 function preload(){
 	cloud = loadImage(cloudURL);
@@ -22,6 +22,7 @@ function setup() {
 	gasP = createP("th");
 	gasSlider = createSlider(0, 10, 0);
 
+	sys = new SmokeSystem();
 
 	//position of the slider/text
 	gasP.position(730, -10);
@@ -50,7 +51,7 @@ function draw() {
 	fill(0, 0, 0, 10*gasSlider.value());
 	rect(0, 0, width, height);
 
-	//sys.update();
+	sys.update();
 
 	for(var i = 0; i < particles.length; i++){
 		particles[i].update();
