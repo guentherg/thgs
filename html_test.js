@@ -31,19 +31,20 @@ function draw() {
 	rect(0, height-40, width, 10);
 
 	//fog
-	fill(255, 100, 75, 10*gasSlider.value());
+	fill(0, 0, 0, 10*gasSlider.value());
 	rect(0, 0, width, height);
 
 	for(var i = 0; i < particles.length; i++){
 		particles[i].update();
 		particles[i].show();
-		if(particles[i].y < -0){
+		if(particles[i].y < 0){
 			particles.splice(i, 1);
 		}
 	}
 
 	if(frameCount % 10 == 0){
 		particles.push(new Particle());
+		console.log("p");
 	}
 
 	fill(0);
