@@ -42,7 +42,7 @@ function draw() {
 		}
 	}
 
-	if(particles.length < 400){
+	if(frameCount % 10 == 0){
 		particles.push(new Particle());
 	}
 
