@@ -4,7 +4,6 @@ var temperature = 0;
 var particles = [];
 var hitGround = 0;
 
-
 function setup() {
 	createCanvas(720, 480);
 	//createSlider/Text
