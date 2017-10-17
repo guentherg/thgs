@@ -6,9 +6,11 @@ var hitGround = 0;
 var cloudURL = "https://raw.githubusercontent.com/guentherg/hello-world/master/cloud.png";
 var cityURL = "https://raw.githubusercontent.com/guentherg/hello-world/master/city-clipart-14232.png";
 var factoryURL = "https://raw.githubusercontent.com/guentherg/hello-world/master/factory.png";
+var thermoURL = "https://raw.githubusercontent.com/guentherg/hello-world/master/thermo.png";
 var cloud;
 var city;
 var factory;
+var thermo;
 var cloudX = -150;
 
 var sys;
@@ -18,6 +20,7 @@ function preload(){
 	cloud = loadImage(cloudURL);
 	city = loadImage(cityURL);
 	factory = loadImage(factoryURL);
+	thermo = loadImage(thermoURL);
 }
 
 function setup() {
@@ -53,9 +56,16 @@ function draw() {
 	image(city, 200, height-114, 400, 166);
 	image(factory, width-234, height-94, 128, 128);
 
-	//fog
+	//fog/thermo
 	fill(0, 0, 0, 10*gasSlider.value());
 	rect(0, 0, width, height);
+	image(thermo, 650, height-130, 60, 164);
+	fill(194, 70, 68);
+	var recth = map(temperature, 18, 60, 18, 80)
+	rect(640, height-70, 20, -temperature);
+	fill(0);
+	textSize(22);
+	text(temperature, 638, height-62);
 
 	//smoke
 	sys.update();
@@ -74,9 +84,6 @@ function draw() {
 		particles.push(new Particle());
 	}
 
-	fill(0);
-	textSize(22);
-	text(temperature, 10, 100);
 	if(cloudX < width-150){
 		cloudX++;
 	}
