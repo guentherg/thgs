@@ -66,6 +66,14 @@ function draw() {
 	fill(0);
 	textSize(22);
 	text(temperature, 638, height-62);
+	textSize(16);
+	text("UV-Strahlen:", 10, 20);
+	fill(115, 105, 255);
+	ellipse(140, 15, 10);
+	fill(0);
+	text("Infrarot-Strahlen:", 10, 40);
+	fill(255, 100, 100);
+	ellipse(140, 35, 10);
 
 	//smoke
 	sys.update();
