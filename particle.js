@@ -32,11 +32,5 @@ class Particle{
 			fill(255, 100, 100);
 		}
 		ellipse(this.x, this.y, 8);
-		if(this.state == "down"){
-			fill(65, 51, 255);
-		}else if (this.state == "up"){
-			fill(255, 51, 51);
-		}
-		ellipse(this.x, this.y, 4);
 	}
 }
