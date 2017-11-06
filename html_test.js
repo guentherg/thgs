@@ -26,7 +26,7 @@ function preload(){
 function setup() {
 	createCanvas(720, 480);
 	//createSlider/Text
-	gasP = createP("th");
+	gasP = createP("Treibhausgase");
 	gasSlider = createSlider(0, 10, 0);
 
 	sys = new SmokeSystem(218, 430);
