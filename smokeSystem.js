@@ -18,7 +18,6 @@ class SmokeSystem{
       this.s[i].show();
       if(this.s[i].lifespan<0){
         this.s.splice(i, 1);
-        console.log(this.s.length);
       }
     }
 
